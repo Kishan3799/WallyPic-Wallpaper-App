@@ -30,7 +30,7 @@ class BottomSheetFragment(private val wallUrl:String) : BottomSheetDialogFragmen
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = BottomSheetBinding.inflate(layoutInflater)
+        binding = BottomSheetBinding.inflate(inflater)
         initButtons()
         return binding.root
     }

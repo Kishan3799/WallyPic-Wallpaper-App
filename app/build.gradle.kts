@@ -86,4 +86,6 @@ dependencies {
 
     //kenburnsView
     implementation("com.flaviofaria:kenburnsview:1.0.7")
+
+
 }

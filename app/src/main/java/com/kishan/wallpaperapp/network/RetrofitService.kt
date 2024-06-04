@@ -12,12 +12,14 @@ interface RetrofitService {
     suspend fun getCuratedWallPaper(@Query("page") page:Int) : Wallpapers
 
 
+    @Headers("Authorization: IW0QGbJm8r2yKigHSEenUgH0xE0W8lOQnvXMaoZjAxjpn1uYMRb893fp")
     @GET("search")
     suspend fun searchWallPaper(
         @Query("page") page: Int,
         @Query("query") query:String
     ) : Wallpapers
 
+    @Headers("Authorization: IW0QGbJm8r2yKigHSEenUgH0xE0W8lOQnvXMaoZjAxjpn1uYMRb893fp")
     @GET("search")
     suspend fun wallPaperCategory(
         @Query("page") page: Int,

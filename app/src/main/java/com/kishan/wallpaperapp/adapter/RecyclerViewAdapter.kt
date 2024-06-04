@@ -18,16 +18,19 @@ import com.kishan.wallpaperapp.model.Photo
 import com.kishan.wallpaperapp.utils.Constants
 import com.kishan.wallpaperapp.utils.WallInteractionListener
 
+
 class RecyclerViewAdapter(private val listener:WallInteractionListener) : PagingDataAdapter<Photo, RecyclerViewAdapter.MyViewHolder>(DiffUtilCallBack()) {
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view){
         private val binding = ItemRecyclerviewBinding.bind(view)
 
+
+
         fun bind(photo:Photo){
             Glide.with(itemView.context)
-                .asBitmap()
+
                 .load(photo.src.small)
                 .centerCrop()
-                .transition(BitmapTransitionOptions.withCrossFade(80))
+
                 .error(R.drawable.baseline_broken_image_24)
                 .into(binding.imageView)
 

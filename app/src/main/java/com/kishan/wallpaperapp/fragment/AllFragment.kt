@@ -23,9 +23,7 @@ import com.kishan.wallpaperapp.viewmodel.CuratedViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-class AllFragment : BaseFragment<FragmentAllBinding>(
-    FragmentAllBinding::inflate
-) ,WallInteractionListener {
+class AllFragment : BaseFragment() {
     private val viewModel : CuratedViewModel by viewModels()
     override var recyclerViewAdapter: RecyclerViewAdapter = RecyclerViewAdapter(this)
 
@@ -37,36 +35,35 @@ class AllFragment : BaseFragment<FragmentAllBinding>(
         }
     }
 
-    override fun initRecyclerView() {
-        val layoutManager = GridLayoutManager(context ,2)
-        binding.curatedRecyclerView.layoutManager = layoutManager
-        binding.curatedRecyclerView.adapter = recyclerViewAdapter.withLoadStateHeaderAndFooter(
-            header = LoaderStateAdapter{recyclerViewAdapter.retry()},
-            footer = LoaderStateAdapter{recyclerViewAdapter.retry()}
-        )
+//    override fun initRecyclerView() {
+//        val layoutManager = GridLayoutManager(context ,2)
+//        binding.curatedRecyclerView.layoutManager = layoutManager
+//        binding.curatedRecyclerView.adapter = recyclerViewAdapter.withLoadStateHeaderAndFooter(
+//            header = LoaderStateAdapter{recyclerViewAdapter.retry()},
+//            footer = LoaderStateAdapter{recyclerViewAdapter.retry()}
+//        )
+//
+//        recyclerViewAdapter.addLoadStateListener {loadState->
+//            binding.curatedRecyclerView.isVisible = loadState.source.refresh is LoadState.NotLoading
+//            binding.progressBar.isVisible = loadState.source.refresh is LoadState.Loading
+//            binding.buttonRetry.isVisible = loadState.source.refresh is LoadState.Error
+//            handleError(loadState)
+//        }
+//
+//        binding.buttonRetry.setOnClickListener {
+//            recyclerViewAdapter.retry()
+//        }
+//    }
 
-        recyclerViewAdapter.addLoadStateListener {loadState->
-            binding.curatedRecyclerView.isVisible = loadState.source.refresh is LoadState.NotLoading
-            binding.progressBar.isVisible = loadState.source.refresh is LoadState.Loading
-            binding.buttonRetry.isVisible = loadState.source.refresh is LoadState.Error
-            handleError(loadState)
-        }
-
-        binding.buttonRetry.setOnClickListener {
-            recyclerViewAdapter.retry()
-        }
-    }
-
-    override fun onItemClick(photoData: Photo, view: View) {
-        val imageData = arrayOf(photoData.src.portrait)
-
-        Navigation.findNavController(view)
-            .navigate(
-                MainFragmentDirections.actionMainFragmentToDownloadFragment(
-                    imageData
-                )
-            )
-    }
+//    override fun onItemClick(photoData: Photo, view: View) {
+//        val imageData = arrayOf(photoData.src.portrait)
+//        Navigation.findNavController(view)
+//            .navigate(
+//                MainFragmentDirections.actionMainFragmentToDownloadFragment(
+//                    imageData
+//                )
+//            )
+//    }
 
 
 }

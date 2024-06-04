@@ -8,8 +8,12 @@ import com.bumptech.glide.Glide
 import com.kishan.wallpaperapp.R
 import com.kishan.wallpaperapp.databinding.CategoryItemRowBinding
 import com.kishan.wallpaperapp.model.Category
+import com.kishan.wallpaperapp.utils.CategoryWallInteractionListener
 
-class CategoryAdapter (private val categoryList:List<Category>) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
+class CategoryAdapter(
+    private val categoryList: List<Category>,
+    private val listener: CategoryWallInteractionListener,
+) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
    inner class CategoryViewHolder(view:View) : RecyclerView.ViewHolder(view){
         val binding = CategoryItemRowBinding.bind(view)
    }
@@ -31,6 +35,10 @@ class CategoryAdapter (private val categoryList:List<Category>) : RecyclerView.A
                 .centerCrop()
                 .error(androidx.appcompat.R.color.material_deep_teal_200)
                 .into(categoryImageView)
+        }
+
+        holder.itemView.setOnClickListener {
+            listener.onCategoryItemClick(currentCategory,it)
         }
     }
 
