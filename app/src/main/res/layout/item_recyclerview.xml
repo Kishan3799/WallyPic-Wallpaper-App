@@ -6,15 +6,18 @@
 
     </data>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_2sdp"
-        app:cardBackgroundColor="@color/primary"
+        app:cardBackgroundColor="@color/white"
         android:focusable="true"
         android:clickable="true"
         android:foreground="?attr/selectableItemBackground"
-        app:cardCornerRadius="@dimen/_16sdp">
+        app:cardCornerRadius="@dimen/_12sdp"
+        app:strokeWidth="@dimen/_2sdp"
+        app:strokeColor="@color/primary"
+        >
 
         <ImageView
             android:id="@+id/imageView"
@@ -24,5 +27,5 @@
             android:focusable="true"
             android:src="@drawable/ic_launcher_foreground"/>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </layout>
