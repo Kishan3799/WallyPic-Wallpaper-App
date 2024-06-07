@@ -31,24 +31,24 @@
             android:layout_marginEnd="@dimen/_12sdp"
             android:layout_marginVertical="@dimen/_11sdp"
             android:gravity="left"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:textColor="@color/black"
+            android:fontFamily="@font/playfair_display_bold"
+            android:textColor="@color/colorOnSurface"
             android:textSize="@dimen/_15ssp"
             android:layout_marginStart="@dimen/_12sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:text="Category"
             app:layout_constraintTop_toTopOf="parent"
-            app:drawableEndCompat= "@drawable/baseline_arrow_back_24"/>
+            app:drawableEndCompat= "@drawable/baseline_arrow_forward_24"/>
 
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonRetry"
-            android:backgroundTint="@color/primary"
+            android:backgroundTint="@color/colorPrimary"
             android:text="Retry"
-            android:fontFamily="sans-serif-condensed-medium"
+            android:fontFamily="@font/playfair_display_bold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -59,7 +59,7 @@
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:progressTint="@color/secondary"
+            android:progressTint="@color/colorSecondary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

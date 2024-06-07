@@ -13,6 +13,7 @@
         tools:context=".fragment.SearchFragment">
 
         <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -25,35 +26,35 @@
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_margin="@dimen/_4sdp"
                     android:background="@drawable/search_background"
-                    android:weightSum="2"
-                    >
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
                     <EditText
                         android:id="@+id/search_edit_text"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:hint="Search for images"
                         android:layout_weight="2"
                         android:background="@null"
-                        android:textColorHint="@color/primary"
-                        android:padding="@dimen/_12sdp"
+                        android:hint="Search for images"
                         android:inputType="text"
-                        />
+                        android:padding="@dimen/_12sdp"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorOnSurface" />
 
                     <ImageView
                         android:id="@+id/searchIconButton"
                         android:layout_width="@dimen/_34sdp"
                         android:layout_height="@dimen/_34sdp"
-                        android:src="@android:drawable/ic_menu_search"
                         android:layout_gravity="center_vertical"
-                        android:focusable="true"/>
+                        android:focusable="true"
+                        android:src="@android:drawable/ic_menu_search" />
                 </LinearLayout>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
@@ -70,10 +71,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonRetry"
-            android:backgroundTint="@color/primary"
+            android:backgroundTint="@color/colorPrimary"
             android:text="Retry"
             android:layout_gravity="center"
-            android:fontFamily="sans-serif-condensed-medium"
+            android:fontFamily="@font/playfair_display_bold"
             android:visibility="gone"
            />
 
@@ -81,7 +82,7 @@
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:progressTint="@color/secondary"
+            android:progressTint="@color/colorSecondary"
             android:layout_gravity="center"
             android:visibility="gone"
            />

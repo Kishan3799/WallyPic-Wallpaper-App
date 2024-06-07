@@ -41,9 +41,9 @@ class DownloadFragment : Fragment() {
     }
 
     private fun bottomSheet(){
-        val bottomSheet = BottomSheetFragment(args.imageData[0])
-        binding.downlaodFabButton.setOnClickListener {
-            bottomSheet.show(requireActivity().supportFragmentManager, "bottomSheet")
+        binding.downlaodFabButton.setOnClickListener{
+            val bottomSheet = BottomSheetFragment.newInstance(args.imageData[0])
+            bottomSheet.show(requireActivity().supportFragmentManager,"bottomSheet")
         }
     }
 

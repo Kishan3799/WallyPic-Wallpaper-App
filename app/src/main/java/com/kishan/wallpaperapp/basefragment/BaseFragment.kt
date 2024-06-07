@@ -22,10 +22,6 @@ import com.kishan.wallpaperapp.utils.WallInteractionListener
 abstract class BaseFragment : Fragment(), WallInteractionListener {
     private lateinit var binding: FragmentAllBinding
     abstract var recyclerViewAdapter : RecyclerViewAdapter
-//    private var _binding: VB? = null
-
-//    val binding: VB
-//        get() = _binding as VB
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -71,7 +67,7 @@ abstract class BaseFragment : Fragment(), WallInteractionListener {
     }
 
     override fun onItemClick(photoData: Photo, view: View) {
-        val imageData = arrayOf(photoData.src.portrait)
+        val imageData = arrayOf(photoData.src.original)
         Navigation.findNavController(view)
             .navigate(
                 MainFragmentDirections.actionMainFragmentToDownloadFragment(

@@ -9,7 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary"
+        android:background="@color/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:elevation="0dp"
         >
@@ -21,7 +21,7 @@
             app:collapsedTitleTextAppearance="@style/Toolbar.TitlebarText"
             app:expandedTitleGravity="center_horizontal|center_vertical"
             app:expandedTitleTextAppearance="@style/Toolbar.TitlebarText.Expanded"
-            app:expandedTitleTextColor="@color/white"
+            app:expandedTitleTextColor="@color/colorSurface"
             app:layout_scrollFlags="scroll|enterAlways|snap|snapMargins"
             app:titleCollapseMode="fade"
             >
@@ -37,7 +37,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@color/colorSurface"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <com.google.android.material.tabs.TabLayout
@@ -50,11 +50,11 @@
             android:background="@drawable/tab_background"
             app:tabGravity="fill"
             app:tabIndicator="@drawable/tab_indicator"
-            app:tabIndicatorColor="@color/secondary"
+            app:tabIndicatorColor="@color/colorSecondary"
             app:tabIndicatorGravity='stretch'
             app:tabIndicatorHeight="@dimen/_30sdp"
-            app:tabSelectedTextColor="@color/primary"
-            app:tabTextColor="@color/white"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabTextColor="@color/colorSurface"
             app:tabTextAppearance="@style/Tab"
             app:tabIndicatorFullWidth="true"
             app:tabMaxWidth="0dp"/>

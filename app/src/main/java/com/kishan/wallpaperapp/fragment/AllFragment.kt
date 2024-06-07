@@ -35,35 +35,4 @@ class AllFragment : BaseFragment() {
         }
     }
 
-//    override fun initRecyclerView() {
-//        val layoutManager = GridLayoutManager(context ,2)
-//        binding.curatedRecyclerView.layoutManager = layoutManager
-//        binding.curatedRecyclerView.adapter = recyclerViewAdapter.withLoadStateHeaderAndFooter(
-//            header = LoaderStateAdapter{recyclerViewAdapter.retry()},
-//            footer = LoaderStateAdapter{recyclerViewAdapter.retry()}
-//        )
-//
-//        recyclerViewAdapter.addLoadStateListener {loadState->
-//            binding.curatedRecyclerView.isVisible = loadState.source.refresh is LoadState.NotLoading
-//            binding.progressBar.isVisible = loadState.source.refresh is LoadState.Loading
-//            binding.buttonRetry.isVisible = loadState.source.refresh is LoadState.Error
-//            handleError(loadState)
-//        }
-//
-//        binding.buttonRetry.setOnClickListener {
-//            recyclerViewAdapter.retry()
-//        }
-//    }
-
-//    override fun onItemClick(photoData: Photo, view: View) {
-//        val imageData = arrayOf(photoData.src.portrait)
-//        Navigation.findNavController(view)
-//            .navigate(
-//                MainFragmentDirections.actionMainFragmentToDownloadFragment(
-//                    imageData
-//                )
-//            )
-//    }
-
-
 }

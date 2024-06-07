@@ -27,10 +27,8 @@ class RecyclerViewAdapter(private val listener:WallInteractionListener) : Paging
 
         fun bind(photo:Photo){
             Glide.with(itemView.context)
-
-                .load(photo.src.small)
+                .load(photo.src.portrait)
                 .centerCrop()
-
                 .error(R.drawable.baseline_broken_image_24)
                 .into(binding.imageView)
 

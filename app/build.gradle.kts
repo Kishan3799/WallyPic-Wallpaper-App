@@ -87,5 +87,5 @@ dependencies {
     //kenburnsView
     implementation("com.flaviofaria:kenburnsview:1.0.7")
 
-
+    implementation("androidx.core:core-splashscreen:1.0.1")
 }

@@ -42,6 +42,7 @@ class MainFragment : Fragment() {
     }
 
     private fun initTabLayout(){
+
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, index->
             tab.text = tabTiles[index]
         }.attach()
@@ -53,7 +54,7 @@ class MainFragment : Fragment() {
         binding.viewPager.isUserInputEnabled = false
     }
     private fun initToolbar() {
-        binding.toolbar.title = "Wallpapers"
+        binding.toolbar.title = "WallyPic"
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
 
         val menuHost : MenuHost = requireActivity()

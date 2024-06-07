@@ -13,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.imageview.ShapeableImageView
 import com.kishan.wallpaperapp.R
@@ -21,10 +22,17 @@ import com.kishan.wallpaperapp.utils.Constants
 import java.io.File
 import java.io.IOException
 
-class BottomSheetFragment(private val wallUrl:String) : BottomSheetDialogFragment() {
+class BottomSheetFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding:BottomSheetBinding
+    private var wallUrl : String? = null
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            wallUrl = it.getString(ARG_WALL_URL)
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,7 +45,7 @@ class BottomSheetFragment(private val wallUrl:String) : BottomSheetDialogFragmen
 
     private fun initButtons() {
         binding.downloadFromNet.setOnClickListener{
-            downloadFromNet(wallUrl)
+            wallUrl?.let { it1 -> downloadFromNet(it1) }
         }
         binding.setAsHomeScreen.setOnClickListener {
             setAsHomeScreen(Constants.background.homeScreen)
@@ -90,6 +98,18 @@ class BottomSheetFragment(private val wallUrl:String) : BottomSheetDialogFragmen
                 Toast.makeText(context,e.message,Toast.LENGTH_LONG).show()
             }
         }
-
     }
+
+    companion object {
+        private const val ARG_WALL_URL = "wall_url"
+
+        @JvmStatic
+        fun newInstance(wallUrl: String) =
+            BottomSheetFragment().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_WALL_URL, wallUrl)
+                }
+            }
+    }
+
 }   

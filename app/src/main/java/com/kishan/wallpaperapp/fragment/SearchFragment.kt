@@ -102,7 +102,7 @@ class SearchFragment : Fragment(), WallInteractionListener {
         }
     }
     override fun onItemClick(photoData: Photo, view: View) {
-        val imageData = arrayOf(photoData.src.portrait)
+        val imageData = arrayOf(photoData.src.original)
 
         Navigation.findNavController(view).navigate(
             SearchFragmentDirections.actionSearchFragmentToDownloadFragment(

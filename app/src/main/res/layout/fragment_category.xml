@@ -19,7 +19,7 @@
            android:text="Category"
            android:layout_marginStart="@dimen/_15sdp"
            android:layout_marginTop="@dimen/_15sdp"
-           android:textColor="@color/primary"
+           android:textColor="@color/colorPrimary"
            android:fontFamily="sans-serif-condensed-medium"
            android:textStyle="bold"
            android:textSize="@dimen/_15sdp"
