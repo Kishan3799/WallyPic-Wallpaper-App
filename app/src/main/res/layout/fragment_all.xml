@@ -10,7 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        android:background="@color/primary_dark_color">
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="0dp"
@@ -27,21 +28,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonRetry"
-            android:backgroundTint="@color/colorPrimary"
-            android:text="Retry"
+            android:text="@string/retry"
             android:visibility="gone"
+            android:backgroundTint="@color/primary_light_color"
+            android:textColor="@color/primary_text_color"
             android:fontFamily="@font/playfair_display_bold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
-        <com.google.android.material.progressindicator.CircularProgressIndicator
+        <com.github.ybq.android.spinkit.SpinKitView
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:visibility="gone"
+            style="@style/SpinKitView.Wave"
             android:layout_height="wrap_content"
-            android:progressTint="@color/colorSecondary"
+            android:progress="89"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

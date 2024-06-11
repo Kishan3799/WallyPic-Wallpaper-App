@@ -10,23 +10,14 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/primary_dark_color"
         tools:context=".fragment.SearchFragment">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
+            android:backgroundTint="@color/primary_dark_color"
             android:layout_height="wrap_content">
-
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|enterAlways|snap">
-
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -42,11 +33,11 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:background="@null"
-                        android:hint="Search for images"
+                        android:hint="@string/search_for_images"
                         android:inputType="text"
                         android:padding="@dimen/_12sdp"
-                        android:textColor="@color/colorPrimary"
-                        android:textColorHint="@color/colorOnSurface" />
+                        android:textColor="@color/secondary_color"
+                        android:textColorHint="@color/secondary_color" />
 
                     <ImageView
                         android:id="@+id/searchIconButton"
@@ -54,9 +45,8 @@
                         android:layout_height="@dimen/_34sdp"
                         android:layout_gravity="center_vertical"
                         android:focusable="true"
-                        android:src="@android:drawable/ic_menu_search" />
+                        android:src="@drawable/baseline_search_24"/>
                 </LinearLayout>
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -71,20 +61,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonRetry"
-            android:backgroundTint="@color/colorPrimary"
-            android:text="Retry"
+            android:backgroundTint="@color/primary_light_color"
+            android:text="@string/retry"
             android:layout_gravity="center"
+            android:textColor="@color/primary_text_color"
             android:fontFamily="@font/playfair_display_bold"
             android:visibility="gone"
            />
 
-        <com.google.android.material.progressindicator.CircularProgressIndicator
+        <com.github.ybq.android.spinkit.SpinKitView
             android:id="@+id/progressBar"
+            style="@style/SpinKitView.Wave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:progressTint="@color/colorSecondary"
+            android:progressTint="@color/secondary_color"
             android:layout_gravity="center"
             android:visibility="gone"
+
            />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

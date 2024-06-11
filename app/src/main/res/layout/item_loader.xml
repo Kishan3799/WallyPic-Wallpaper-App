@@ -16,7 +16,7 @@
             android:id="@+id/errorMsg"
             android:fontFamily="sans-serif-condensed-medium"
             android:layout_marginStart="@dimen/_5sdp"
-            android:textColor="@color/colorOnSurface"
+            android:textColor="@color/primary_text_color"
             />
         
         <androidx.appcompat.widget.AppCompatButton
@@ -25,19 +25,19 @@
             android:id="@+id/retryButtonItem"
             android:layout_weight="1"
             android:fontFamily="@font/playfair_display_bold"
-            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="@color/primary_light_color"
             android:visibility="visible"
-            android:text="Retry"
-            android:textColor="@color/colorSurface"
+            android:text="@string/retry"
+            android:textColor="@color/primary_text_color"
             />
         
-        <com.google.android.material.progressindicator.CircularProgressIndicator
+        <com.github.ybq.android.spinkit.SpinKitView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/SpinKitView.Wave"
             android:id="@+id/progressBar"
-            android:progressTint="@color/colorPrimary"
+            android:progressTint="@color/secondary_color"
             android:layout_gravity="center"
-
             />
 
     </LinearLayout>

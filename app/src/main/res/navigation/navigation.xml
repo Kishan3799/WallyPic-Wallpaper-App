@@ -7,24 +7,36 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.kishan.wallpaperapp.fragment.MainFragment"
+        android:name="com.kishan.wallypic.fragment.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_downloadFragment"
             app:destination="@id/downloadFragment"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_pop_enter"
+            app:popExitAnim="@anim/fragment_pop_exit"
             app:popUpTo="@id/mainFragment"
             app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_mainFragment_to_specificCategoryFragment"
-            app:destination="@id/specificCategoryFragment" />
+            app:destination="@id/specificCategoryFragment"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_pop_enter"
+            app:popExitAnim="@anim/fragment_pop_exit" />
         <action
             android:id="@+id/action_mainFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_pop_enter"
+            app:popExitAnim="@anim/fragment_pop_exit" />
     </fragment>
     <fragment
         android:id="@+id/downloadFragment"
-        android:name="com.kishan.wallpaperapp.fragment.DownloadFragment"
+        android:name="com.kishan.wallypic.fragment.DownloadFragment"
         android:label="DownloadFragment" >
         <argument
             android:name="imageData"
@@ -32,24 +44,32 @@
     </fragment>
     <fragment
         android:id="@+id/specificCategoryFragment"
-        android:name="com.kishan.wallpaperapp.fragment.SpecificCategoryFragment"
+        android:name="com.kishan.wallypic.fragment.SpecificCategoryFragment"
         android:label="SpecificCategoryFragment" >
         <argument
             android:name="categoryName"
             app:argType="string" />
         <action
             android:id="@+id/action_specificCategoryFragment_to_downloadFragment"
-            app:destination="@id/downloadFragment" />
+            app:destination="@id/downloadFragment"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_pop_enter"
+            app:popExitAnim="@anim/fragment_pop_exit" />
     </fragment>
     <argument
         android:name="categoryName"
         app:argType="string" />
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.kishan.wallpaperapp.fragment.SearchFragment"
+        android:name="com.kishan.wallypic.fragment.SearchFragment"
         android:label="SearchFragment" >
         <action
             android:id="@+id/action_searchFragment_to_downloadFragment"
-            app:destination="@id/downloadFragment" />
+            app:destination="@id/downloadFragment"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_pop_enter"
+            app:popExitAnim="@anim/fragment_pop_exit" />
     </fragment>
 </navigation>

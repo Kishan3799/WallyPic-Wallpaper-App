@@ -30,9 +30,10 @@
             android:drawableStart="@drawable/download_svgrepo_com"
             android:drawablePadding="@dimen/_70sdp"
             android:fontFamily="@font/playfair_display_bold"
-            android:text="Download"
+            android:text="@string/download"
             android:gravity="start|center_vertical"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/secondary_light_color"
             android:textAllCaps="false"
             android:background="@drawable/main_selector"
             />
@@ -47,9 +48,10 @@
             android:drawableStart="@drawable/baseline_crop_original_24"
             android:drawablePadding="@dimen/_70sdp"
             android:fontFamily="@font/playfair_display_bold"
-            android:text="Set as home screen"
+            android:text="@string/set_as_home_screen"
             android:gravity="center_vertical"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/secondary_light_color"
             android:textAllCaps="false"
             android:background="@drawable/main_selector"
             />
@@ -64,13 +66,12 @@
             android:drawableStart="@drawable/baseline_lock_outline_24"
             android:drawablePadding="@dimen/_70sdp"
             android:fontFamily="@font/playfair_display_bold"
-            android:text="Set as lock screen"
+            android:text="@string/set_as_lock_screen"
             android:gravity="center_vertical"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_12ssp"
             android:textAllCaps="false"
+            android:textColor="@color/secondary_light_color"
             android:background="@drawable/main_selector"
             />
-
-
     </LinearLayout>
 </layout>

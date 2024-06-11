@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -5,17 +7,23 @@ plugins {
 }
 
 android {
-    namespace = "com.kishan.wallpaperapp"
+    namespace = "com.kishan.wallypic"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.kishan.wallpaperapp"
+        applicationId = "com.kishan.wallypic"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        val properties : Properties = Properties()
+        properties.load(project.rootProject.file("local.properties").inputStream())
+
+        buildConfigField("String", "API_KEY", "\"${properties.getProperty("API_KEY")}\"")
+
     }
 
     buildTypes {
@@ -37,6 +45,7 @@ android {
     buildFeatures {
         viewBinding = true
         dataBinding = true
+        buildConfig = true
     }
 }
 
@@ -81,8 +90,7 @@ dependencies {
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
 
-    //loading animation
-//    implementation ("com.github.ybq:Android-SpinKit:1.4.0")
+    implementation ("com.github.ybq:Android-SpinKit:1.4.0")
 
     //kenburnsView
     implementation("com.flaviofaria:kenburnsview:1.0.7")

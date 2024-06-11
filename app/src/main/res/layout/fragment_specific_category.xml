@@ -9,7 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/primary_dark_color">
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -30,41 +31,45 @@
             android:id="@+id/categoryName"
             android:layout_marginEnd="@dimen/_12sdp"
             android:layout_marginVertical="@dimen/_11sdp"
-            android:gravity="left"
+            android:gravity="start"
             android:fontFamily="@font/playfair_display_bold"
-            android:textColor="@color/colorOnSurface"
+            android:textColor="@color/secondary_color"
             android:textSize="@dimen/_15ssp"
             android:layout_marginStart="@dimen/_12sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:text="Category"
+            android:text="@string/category"
             app:layout_constraintTop_toTopOf="parent"
-            app:drawableEndCompat= "@drawable/baseline_arrow_forward_24"/>
+            app:drawableEndCompat= "@drawable/baseline_arrow_forward_24" />
+
 
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonRetry"
-            android:backgroundTint="@color/colorPrimary"
-            android:text="Retry"
+            android:backgroundTint="@color/primary_light_color"
+            android:text="@string/retry"
             android:fontFamily="@font/playfair_display_bold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            />
 
-        <com.google.android.material.progressindicator.CircularProgressIndicator
+        <com.github.ybq.android.spinkit.SpinKitView
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:progressTint="@color/colorSecondary"
+            style="@style/SpinKitView.Wave"
+            android:progressTint="@color/secondary_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:visibility="gone"/>
+            android:visibility="gone"
+         />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
