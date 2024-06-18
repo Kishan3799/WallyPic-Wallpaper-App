@@ -66,7 +66,7 @@ abstract class BaseFragment : Fragment(), WallInteractionListener {
     }
 
     override fun onItemClick(photoData: Photo, view: View) {
-        val imageData = arrayOf(photoData.src.original)
+        val imageData = arrayOf(photoData.src.portrait)
         Navigation.findNavController(view)
             .navigate(
                 MainFragmentDirections.actionMainFragmentToDownloadFragment(

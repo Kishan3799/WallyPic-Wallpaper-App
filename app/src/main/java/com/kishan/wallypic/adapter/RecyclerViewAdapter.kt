@@ -7,6 +7,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions
 import com.kishan.wallypic.R
 import com.kishan.wallypic.databinding.ItemRecyclerviewBinding
 import com.kishan.wallypic.model.Photo
@@ -21,8 +22,10 @@ class RecyclerViewAdapter(private val listener:WallInteractionListener) : Paging
 
         fun bind(photo:Photo){
             Glide.with(itemView.context)
+                .asBitmap()
                 .load(photo.src.portrait)
                 .centerCrop()
+                .transition(BitmapTransitionOptions.withCrossFade(80))
                 .error(R.drawable.baseline_broken_image_24)
                 .into(binding.imageView)
 
